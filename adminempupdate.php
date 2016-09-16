@@ -17,8 +17,8 @@ if(isset($_GET['id'])){
     <title>Edit Employee Documents</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/shop-item.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/shop-item.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -111,148 +111,182 @@ if(isset($_GET['id'])){
                     <div class="row">
                     <!--Info-->
                     	<div class="col-md-12 well" id="form1">
-                    		<p class="lead" align="middle">EMPLOYEE POST INFORMATION</p>
+						<legend>Employee Post Information</legend>
                     		<div class="col-md-6">
-                    			<div class="row">
-                       				<div class="col-md-3"><label>Location:</label></div>
-                       				<div class="col-md-9">
-	                       					<select name="location" class="form-control" style="width:45%;" required>
-	                       					<option value=""></option>
-	                       						<option value="Karachi">Karachi</option>
-	                       						<option value="Lahore">Lahore</option>
-	                       						<option value="Multan">Multan</option>
-	                       					</select>
-	                    				<br/>
-                    				</div>
-                    				<div class="col-md-3"><label>Department:</label></div>
+							<div class="form-group">
+							<label class="col-sm-3 control-label">Location:</label>
+                       			<div class="col-md-9">
+	                       			<select name="location" class="form-control" style="width:45%;" required>
+	                       				<option value=""></option>
+	                       				<option value="Karachi">Karachi</option>
+	                       				<option value="Lahore">Lahore</option>
+	                       				<option value="Multan">Multan</option>
+	                       			</select><br/>
+                    			</div>
+                    		</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Department:</label>
+                    			<div class="col-md-9">
+									<select name="dept" class="form-control" style="width:45%;" required>
+	                       				<option value=""></option>
+	                       				<option value="Software">Software</option>
+	                       				<option value="Logistics">Logistics</option>
+	                       				<option value="Marketing">Marketing</option>
+	                       				<option value="Quality Assurance">Quality Assurance</option>
+	                       				<option value="Database Administrator">Database Administrator</option>
+	                       			</select><br/>
+                       			</div>
+                       		</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Applied For:</label>
+									<div class="col-md-9">
+									<input type="text" class="form-control" name="applied" pattern="[A-Za-z ]+" placeholder="Software Developer" title="Only Alphabets" required/><br/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Reports To:</label>
+									<div class="col-md-9">
+									<input type="text" class="form-control" name="reports" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Javed Iqbal" required/><br/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Referred By:</label>
+									<div class="col-md-9">
+									<input type="text" class="form-control" name="referred" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Junaid Ansari" required/><br/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4 control-label"><u>Salary</u></label>
+								<div class="col-sm-8"><br/><br/></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Proposed Before:</label>
                     				<div class="col-md-9">
-										<select name="dept" class="form-control" style="width:45%;" required>
-	                       					<option value=""></option>
-	                       					<option value="Software">Software</option>
-	                       					<option value="Logistics">Logistics</option>
-	                       					<option value="Marketing">Marketing</option>
-	                       					<option value="Quality Assurance">Quality Assurance</option>
-	                       					<option value="Database Administrator">Database Administrator</option>
-	                       				</select>
-									<br/>
+									<input type="number" class="form-control" name="salary_before"  pattern="\d+" min=0 style="width:45%;" data-toggle="tooltip" title="Recommended Salary" required/><br/>
                        				</div>
-									<div class="col-md-3"><label>Applied For:</label></div>
-									<div class="col-md-9">
-									<input type="text" class="form-control" name="applied" pattern="[A-Za-z ]+" placeholder="Software Developer" title="Only Alphabets" required/>
-									<br/>
-									</div>
-									<div class="col-md-3"><label>Reports To:</label></div>
-									<div class="col-md-9">
-									<input type="text" class="form-control" name="reports" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Javed Iqbal" required/>
-									<br/>
-									</div>
-									<div class="col-md-3"><label>Referred By:</label></div>
-									<div class="col-md-9">
-									<input type="text" class="form-control" name="referred" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Junaid Ansari" required/>
-									<br/>
-									</div>
-                    				<div class="col-md-4"><label><u>Salary</u></label></div>
-                    				<div class="col-md-8"><br/><br/></div>
-                    				<div class="col-md-3"><label>Proposed Before:</label></div>
-                    				<div class="col-md-9">
-									<input type="number" class="form-control" name="salary_before"  pattern="\d+" min=0 style="width:45%;" data-toggle="tooltip" title="Recommended Salary" required/>
-									<br/>
-                       				</div>
-                       				<div class="col-md-3"><label>Proposed After:</label></div>
+                       		</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Proposed After:</label>
                        				<div class="col-md-9">
 									<input type="number" class="form-control" name="salary_after"  pattern="\d+" min=0 style="width:45%;" data-toggle="tooltip" title="Recommended Salary After Probabtion" required/><br/>
 									</div>
-
-                       				<div class="col-md-3"><label>Confirmed:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Confirmed:</label>
                        				<div class="col-md-9">
 									<input type="number" class="form-control" name="salary_confirmed"  pattern="\d+" min=0 style="width:45%;" data-toggle="tooltip" title="Confirmed Salary" required/><br/>
 									</div>
-
-									<div class="col-md-3"><label>In Words:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">In Words:</label>
 									<div class="col-md-9">
-									<input type="text" class="form-control" name="salary_words" pattern="[A-Za-z ]+" title="Salary in Words" data-toggle="tooltip" required/><hr>
+									<input type="text" class="form-control" name="salary_words" pattern="[A-Za-z ]+" title="Salary in Words" data-toggle="tooltip" required/><hr/>
 									</div>
-
-									<div class="col-md-3"><label>Bank:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Bank:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="bank" pattern="[A-Za-z ]+" title="Only Alphabets" required/><br/>
 									</div>
-
-									<div class="col-md-3"><label>Account#</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Account#</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="account" pattern="[\d-]+" title="Only Alphabets" required/><br/>
 									</div>
-                       				<div class="col-md-3"><label>Benefits:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Benefits:</label>
                        				<div class="col-md-9">
 									<input type="text" class="form-control" name="benefits" pattern="[A-Za-z ]+" title="Other Recommended Benefits" data-toggle="tooltip" required/><br/></div>
-								<br/>
-								</div>
+							</div>
 							</div>
 							<div class="col-md-6">
-								<div class="row">
-									
-                       				<div class="col-md-3"><label>Probationary Period:</label></div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Probationary Period:</label>
                        				<div class="col-md-9">
 									<input type="number" class="form-control" name="prob_period"  pattern="\d+"  style="width:25%;display:inline;" required/> Months<br/><br/></div>
-									<div class="col-md-3"><label>Expected Joining Date:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Expected Joining Date:</label>
 									<div class="col-md-9">
 										<input type="date" class="form-control" name="join_date"  id="date" style="width:45%" required/><br/><br/>
 									</div>
-									
-									<div class="col-md-3"><label>Interviewer Name:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Interviewer Name:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="interv_name" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Mark Zuckerberg" required/>
 									<br/>
 									</div>
-									<div class="col-md-3"><label>Interviewer Designation:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Interviewer Designation:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="interv_desig" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="CEO" required/>
 									<br/>
 									</div>
-									<div class="col-md-3"><label>Incharge Name:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Incharge Name:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="incharge_name" pattern="[A-Za-z ]+" title="Only Alphabets" placeholder="Shabeer" required/>
 									<br/>
 									</div>
-									<div class="col-md-3"><label>Incharge Designation:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Incharge Designation:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="incharge_desig" pattern="[A-Za-z ]+" title="Only Alphabets" required/><br/>
 									</div>
-									<div class="col-md-3"><label>Company:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Company:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="company" pattern="[A-Za-z]+" title="Only Alphabets" placeholder="Lakson Business Solution" required/>
 									<br/>
 									</div>
-									<div class="col-md-3"><label>Employee Designation:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Employee Designation:</label>
 									<div class="col-md-9">
 									<input type="text" class="form-control" name="employee_desig" pattern="[A-Za-z ]+" title="Only Alphabets" required/>
 									<br/>
 									</div>
-									
-									<div class="col-md-3"><label>Notice Period:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Notice Period:</label>
 									<div class="col-md-9">
 									<input type="number" class="form-control" name="notice_period" pattern="\d+" min=0 style="width:45%;" title="Numbers only" required/><br/>
 									</div>
-									<div class="col-md-3"><label>Telex#</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Telex#</label>
 									<div class="col-md-9">
 									<input type="number" class="form-control" name="telex"  pattern="\d+" min=0 style="width:45%;" required/><br/>
 									</div>
-									<div class="col-md-3"><label>Fax#</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Fax#</label>
 									<div class="col-md-9">
 									<input type="number" class="form-control" name="fax"  pattern="\d+" min=0 style="width:45%;" required/><br/>
 									</div>
-									<div class="col-md-3"><label>Remarks:</label></div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Remarks:</label>
 									<div class="col-md-9">
 									<textarea name="remarks" style="resize:none;" class="form-control" title="Remarks of Payroll Department" data-toggle="tooltip" required></textarea><br/>
 									</div>
+							</div>
+							<div class="form-group">
 									<div class="col-md-12">
 									<div class="text-right">
 										<input type="submit" class="btn btn-success" id="submit" value="Submit" name="btn_submit"/>
 										</div>
 									</div>	
-                        		</div>
                         	</div>
-                        </div>
+                        	</div>
+                        	</div>
                     <!--Info End-->
 					</div>
 					<!--LAST ROW-->
